@@ -1,17 +1,16 @@
 backend:
   name: github
-  repo: efesolutions24-alt/electra-frame-exports # Based on your screenshot
+  repo: efesolutions24-alt/electra-frame-exports
   branch: main
 
-media_folder: "images" # Where your photos will go
-public_folder: "/images"
-
+# This section tells PagesCMS what to show in the dashboard
 collections:
   - name: "pages"
-    label: "Pages"
+    label: "Website Pages"
     files:
       - file: "index.html"
         label: "Home Page"
         name: "home"
         fields:
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Main Content", name: "body", widget: "markdown"}
