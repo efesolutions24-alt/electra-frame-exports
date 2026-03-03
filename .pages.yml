@@ -1,14 +1,23 @@
-# Settings for PagesCMS
-media:
-  input: images
-  output: /images
+backend:
+  name: github
+  repo: efesolutions24-alt/electra-frame-exports
+  branch: main
 
-content:
-  - name: pages
-    label: Website Pages
-    type: collection
-    path: /
-    exclude: [README.md, .pages.yml, admin]
-    fields:
-      - { name: title, label: Title, type: string }
-      - { name: body, label: Content, type: rich-text }
+media_folder: "content/images"
+public_folder: "/content/images"
+
+collections:
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "index.html"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+
+          - label: "Main Content"
+            name: "body"
+            widget: "markdown"
