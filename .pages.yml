@@ -1,0 +1,14 @@
+# Settings for PagesCMS
+media:
+  input: images
+  output: /images
+
+content:
+  - name: pages
+    label: Website Pages
+    type: collection
+    path: /
+    exclude: [README.md, .pages.yml, admin]
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: body, label: Content, type: rich-text }
