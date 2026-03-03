@@ -1,16 +1,17 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: efesolutions24-alt/electra-frame-exports # Based on your screenshot
   branch: main
 
-media_folder: "content/images"
-public_folder: "/content/images"
+media_folder: "images" # Where your photos will go
+public_folder: "/images"
 
 collections:
-  - name: "projects"
-    label: "Projects"
-    folder: "content/projects"
-    create: true
-    fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.html"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
