@@ -1,23 +1,12 @@
-backend:
-  name: github
-  repo: efesolutions24-alt/electra-frame-exports
-  branch: main
-
-media_folder: "content/images"
-public_folder: "/content/images"
-
-collections:
-  - name: "home"
-    label: "Home Page"
-    files:
-      - file: "index.html"
-        label: "Home Page"
-        name: "home"
-        fields:
-          - label: "Page Title"
-            name: "title"
-            widget: "string"
-
-          - label: "Main Content"
-            name: "body"
-            widget: "markdown"
+content:
+  - name: home
+    label: Home Page
+    type: document
+    path: index.html
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+      - name: body
+        label: Main Content (About Us)
+        type: rich-text
