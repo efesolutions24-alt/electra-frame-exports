@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Electra Frame Export Solutions</title>
+  
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -11,22 +14,18 @@
       background-color: #f4f6f9;
       text-align: center;
     }
-
     header {
       background-color: #0d2c6c;
       color: white;
       padding: 40px 20px;
     }
-
     header h1 {
       margin: 0;
       font-size: 32px;
     }
-
     section {
       padding: 40px 20px;
     }
-
     .btn {
       display: inline-block;
       margin-top: 20px;
@@ -36,7 +35,6 @@
       text-decoration: none;
       border-radius: 5px;
     }
-
     footer {
       background-color: #222;
       color: white;
@@ -59,12 +57,24 @@
       We specialize in Diesel Generators, Power Solutions, 
       and HVAC Systems for industrial and commercial projects.
     </p>
-    <a href="/admin" class="btn">Admin Login</a>
+    <a href="/admin/" class="btn">Admin Login</a>
   </section>
 
   <footer>
     © 2026 Electra Frame Export Solutions. All rights reserved.
   </footer>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
