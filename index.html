@@ -1,11 +1,5 @@
 <script>
   if (window.netlifyIdentity) {
-    // IMPORTANT: Point this to your actual Netlify instance URL
-    // Replace 'your-site-name.netlify.app' with your real Netlify URL
-    window.netlifyIdentity.init({
-      APIUrl: 'https://your-site-name.netlify.app/.netlify/identity'
-    });
-
     window.netlifyIdentity.on("init", user => {
       if (!user) {
         window.netlifyIdentity.on("login", () => {
